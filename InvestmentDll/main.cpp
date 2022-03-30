@@ -10,46 +10,70 @@
 // included in the resulting library.
 
 #include <iostream>
-#include <memory>
+#include <tr1/memory>
+#include <tr1/shared_ptr.h>
+//#include <memory>
 #include "Investment.h"
 
 //#define DLL_EXPORT __declspec(dllexport)
 
-void InvestmentDeleter( Investment *pInv )
+void Deleter( Investment *pInv )
 {
-    std::cout << "My investment deleter()" << std::endl;
+    std::cout << "Deleter()" << std::endl;
     if( pInv != NULL ) {
         delete pInv;
         pInv = NULL;
+    }
+    else {
+        std::cout << "null pointer" << std::endl;
+    }
+}
+
+void DeleterII( Investment *pInv )
+{
+    std::cout << "DeleterII()" << std::endl;
+    if( pInv != NULL ) {
+        delete pInv;
+        pInv = NULL;
+    }
+    else {
+        std::cout << "null pointer" << std::endl;
     }
 }
 
 // DLL_EXPORT
 extern "C"
 {
-    // A function adding two integers and returning the result
-    int SampleAddInt(int i1, int i2)
-    {
-        return i1 + i2;
-    }
-
-    // A function doing nothing ;)
-    void SampleFunction1()
+    int SampleFunction()
     {
         // insert code here
-    }
-
-    std::shared_ptr< Investment > CreateInvestment()
-    {
-        std::cout << "API CreateInvestment" << std::endl;
-        return std::shared_ptr< Investment >( new Investment( 20 ), InvestmentDeleter );
-    }
-
-    // A function doing nothing ;)
-    int SampleFunction4()
-    {
-        // insert code here
-        std::cout << "API SampleFunction4" << std::endl;
+        std::cout << "API SampleFunction" << std::endl;
         return 10;
+    }
+
+    std::tr1::shared_ptr< Investment > CreateInvestment( const int& nDaysHeld, bool *pbCreateSuccess )
+    {
+        std::cout << "API CreateInvestment()==================== Start" << std::endl;
+        //std::tr1::shared_ptr< Investment >retVal( static_cast< Investment* >( 0 ), Deleter );
+        std::tr1::shared_ptr< Investment >retVal( static_cast< Investment* >( 0 ), Deleter );
+
+        if( nDaysHeld == 2 ) {
+            retVal = std::tr1::shared_ptr< Investment >( new Investment( nDaysHeld ), DeleterII );
+            *pbCreateSuccess = true;
+        }
+        else if( nDaysHeld == 0 ) {
+            // do nothing
+            *pbCreateSuccess = false;
+        }
+        else {
+            retVal = std::tr1::shared_ptr< Investment >( new Investment( nDaysHeld ), Deleter );
+            *pbCreateSuccess = true;
+        }
+
+        std::cout << "API CreateInvestment()==================== End" << std::endl;
+        return retVal;
+
+//        std::cout << "API CreateInvestment" << std::endl;
+//        return std::tr1::shared_ptr< Investment >( new Investment( nDaysHeld ), InvestmentDeleter );
     }
 }

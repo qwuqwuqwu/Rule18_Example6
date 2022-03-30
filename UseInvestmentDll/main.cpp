@@ -1,11 +1,13 @@
 #include <iostream>
 #include <windows.h>
-#include <memory>
+
+#include <tr1/memory>
+#include <tr1/shared_ptr.h>
+
 #include "Investment.h"
-//#include <Boost>
 
 HINSTANCE g_hDll = NULL; // instance handle for dll import
-typedef std::shared_ptr<Investment>(*lpCreateInvestment)(void); // dll function pointer declaration
+typedef std::tr1::shared_ptr<Investment>(*lpCreateInvestment)( const int&, bool* ); // dll function pointer declaration
 
 void WrongDeleter( Investment *pInv )
 {
@@ -16,17 +18,34 @@ void WrongDeleter( Investment *pInv )
     }
 }
 
-void Example( void )
+void PrintDays( std::tr1::shared_ptr< Investment > Inv )
 {
+    std::cout << "Days held by investment " << Inv.get() << " is " << Inv->GetDaysHeld() << std::endl;
+}
+
+void Example( const int& nDaysHeld )
+{
+    // print something when function start
+    std::cout << std::endl;
+    std::cout << "Example Start" << nDaysHeld << std::endl;
+
     // get function pointer
     lpCreateInvestment pCreateInvFunc = (lpCreateInvestment)GetProcAddress( g_hDll, "CreateInvestment" );
 
-//    std::shared_ptr< Investment > SharedPtr( pCreateInvFunc().get(), WrongDeleter ); // <--------Try uncomment this
-    std::shared_ptr< Investment > SharedPtr = pCreateInvFunc();
+    // get investment by calling dll function
+    bool bSuccess = false;
+    std::tr1::shared_ptr< Investment > SharedPtr = pCreateInvFunc( nDaysHeld, &bSuccess );
+    // std::tr1::shared_ptr< Investment > SharedPtr( pCreateInvFunc( nDaysHeld, &bSuccess ).get(), WrongDeleter ); // <--------Try uncomment this
+    // Original deleter will be called before new WrongDeleter is assigned
 
-    std::cout << "Investment days held = " << SharedPtr->GetDaysHeld() << std::endl;
+    if( bSuccess ) {
+        PrintDays( SharedPtr );
+    }
+    else {
+        std::cout << "Create unsuccessfully" << std::endl;
+    }
 
-    std::cout << "Before leaving example" << std::endl;
+    std::cout << "Example End" << std::endl;
 }
 
 int main()
@@ -35,7 +54,9 @@ int main()
 
     g_hDll = LoadLibrary("libInvestmentDll.dll");
 
-    Example();
+    Example( 10 );
+    Example( 2 );
+    Example( 0 );
 
     FreeLibrary( g_hDll );
 

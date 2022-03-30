@@ -1,65 +1,43 @@
 EXPORTS
     CreateInvestment @1
-    SampleAddInt @2
-    SampleFunction1 @3
-    SampleFunction4 @4
-    _Z17InvestmentDeleterP10Investment @5
-    _ZN10Investment11GetDaysHeldEv @6
-    _ZN10InvestmentC1ERKi @7
-    _ZN10InvestmentC2ERKi @8
-    _ZN10InvestmentD1Ev @9
-    _ZN10InvestmentD2Ev @10
-    _ZN9__gnu_cxx13new_allocatorISt19_Sp_counted_deleterIP10InvestmentPFvS3_ESaIvELNS_12_Lock_policyE2EEE10deallocateEPS8_y @11
-    _ZN9__gnu_cxx13new_allocatorISt19_Sp_counted_deleterIP10InvestmentPFvS3_ESaIvELNS_12_Lock_policyE2EEE8allocateEyPKv @12
-    _ZN9__gnu_cxx13new_allocatorISt19_Sp_counted_deleterIP10InvestmentPFvS3_ESaIvELNS_12_Lock_policyE2EEEC2Ev @13
-    _ZN9__gnu_cxx13new_allocatorISt19_Sp_counted_deleterIP10InvestmentPFvS3_ESaIvELNS_12_Lock_policyE2EEED2Ev @14
-    _ZNK10Investment9IsTaxFreeEv @15
-    _ZNK9__gnu_cxx13new_allocatorISt19_Sp_counted_deleterIP10InvestmentPFvS3_ESaIvELNS_12_Lock_policyE2EEE8max_sizeEv @16
-    _ZNSaISt19_Sp_counted_deleterIP10InvestmentPFvS1_ESaIvELN9__gnu_cxx12_Lock_policyE2EEEC1IvEERKSaIT_E @17
-    _ZNSaISt19_Sp_counted_deleterIP10InvestmentPFvS1_ESaIvELN9__gnu_cxx12_Lock_policyE2EEED1Ev @18
-    _ZNSt10shared_ptrI10InvestmentEC1IS0_PFvPS0_EvEEPT_T0_ @19
-    _ZNSt12__shared_ptrI10InvestmentLN9__gnu_cxx12_Lock_policyE2EE31_M_enable_shared_from_this_withIS0_S0_EENSt9enable_ifIXntsrNS3_15__has_esft_baseIT0_vEE5valueEvE4typeEPT_ @20
-    _ZNSt12__shared_ptrI10InvestmentLN9__gnu_cxx12_Lock_policyE2EEC2IS0_PFvPS0_EvEEPT_T0_ @21
-    _ZNSt14_Sp_ebo_helperILi0EPFvP10InvestmentELb0EE6_S_getERS4_ @22
-    _ZNSt14_Sp_ebo_helperILi0EPFvP10InvestmentELb0EEC2EOS3_ @23
-    _ZNSt14_Sp_ebo_helperILi1ESaIvELb1EE6_S_getERS1_ @24
-    _ZNSt14_Sp_ebo_helperILi1ESaIvELb1EEC2ERKS0_ @25
-    _ZNSt14__shared_countILN9__gnu_cxx12_Lock_policyE2EEC1IP10InvestmentPFvS5_EEET_T0_ @26
-    _ZNSt14__shared_countILN9__gnu_cxx12_Lock_policyE2EEC1IP10InvestmentPFvS5_ESaIvEEET_T0_T1_ @27
-    _ZNSt15__allocated_ptrISaISt19_Sp_counted_deleterIP10InvestmentPFvS2_ESaIvELN9__gnu_cxx12_Lock_policyE2EEEE3getEv @28
-    _ZNSt15__allocated_ptrISaISt19_Sp_counted_deleterIP10InvestmentPFvS2_ESaIvELN9__gnu_cxx12_Lock_policyE2EEEEC1ERS9_PS8_ @29
-    _ZNSt15__allocated_ptrISaISt19_Sp_counted_deleterIP10InvestmentPFvS2_ESaIvELN9__gnu_cxx12_Lock_policyE2EEEED1Ev @30
-    _ZNSt15__allocated_ptrISaISt19_Sp_counted_deleterIP10InvestmentPFvS2_ESaIvELN9__gnu_cxx12_Lock_policyE2EEEEaSEDn @31
-    _ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE10_M_destroyEv @32
-    _ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EEC2Ev @33
-    _ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EED2Ev @34
-    _ZNSt16allocator_traitsISaISt19_Sp_counted_deleterIP10InvestmentPFvS2_ESaIvELN9__gnu_cxx12_Lock_policyE2EEEE10deallocateERS9_PS8_y @35
-    _ZNSt16allocator_traitsISaISt19_Sp_counted_deleterIP10InvestmentPFvS2_ESaIvELN9__gnu_cxx12_Lock_policyE2EEEE8allocateERS9_y @36
-    _ZNSt19_Sp_counted_deleterIP10InvestmentPFvS1_ESaIvELN9__gnu_cxx12_Lock_policyE2EE10_M_destroyEv @37
-    _ZNSt19_Sp_counted_deleterIP10InvestmentPFvS1_ESaIvELN9__gnu_cxx12_Lock_policyE2EE10_M_disposeEv @38
-    _ZNSt19_Sp_counted_deleterIP10InvestmentPFvS1_ESaIvELN9__gnu_cxx12_Lock_policyE2EE14_M_get_deleterERKSt9type_info @39
-    _ZNSt19_Sp_counted_deleterIP10InvestmentPFvS1_ESaIvELN9__gnu_cxx12_Lock_policyE2EE5_Impl6_M_delEv @40
-    _ZNSt19_Sp_counted_deleterIP10InvestmentPFvS1_ESaIvELN9__gnu_cxx12_Lock_policyE2EE5_Impl8_M_allocEv @41
-    _ZNSt19_Sp_counted_deleterIP10InvestmentPFvS1_ESaIvELN9__gnu_cxx12_Lock_policyE2EE5_ImplC1ES1_S3_RKS4_ @42
-    _ZNSt19_Sp_counted_deleterIP10InvestmentPFvS1_ESaIvELN9__gnu_cxx12_Lock_policyE2EEC1ES1_S3_RKS4_ @43
-    _ZNSt19_Sp_counted_deleterIP10InvestmentPFvS1_ESaIvELN9__gnu_cxx12_Lock_policyE2EED0Ev @44
-    _ZNSt19_Sp_counted_deleterIP10InvestmentPFvS1_ESaIvELN9__gnu_cxx12_Lock_policyE2EED1Ev @45
-    _ZSt11__addressofIPFvP10InvestmentEEPT_RS4_ @46
-    _ZSt11__addressofISaISt19_Sp_counted_deleterIP10InvestmentPFvS2_ESaIvELN9__gnu_cxx12_Lock_policyE2EEEEPT_RSA_ @47
-    _ZSt12__to_addressISt19_Sp_counted_deleterIP10InvestmentPFvS2_ESaIvELN9__gnu_cxx12_Lock_policyE2EEEPT_SA_ @48
-    _ZSt18__allocate_guardedISaISt19_Sp_counted_deleterIP10InvestmentPFvS2_ESaIvELN9__gnu_cxx12_Lock_policyE2EEEESt15__allocated_ptrIT_ERSB_ @49
-    _ZSt4moveIRPFvP10InvestmentEEONSt16remove_referenceIT_E4typeEOS6_ @50
-    _ZSt4moveIRSaIvEEONSt16remove_referenceIT_E4typeEOS3_ @51
-    _ZTIFvP10InvestmentE @52 DATA
-    _ZTIPFvP10InvestmentE @53 DATA
-    _ZTISt11_Mutex_baseILN9__gnu_cxx12_Lock_policyE2EE @54 DATA
-    _ZTISt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE @55 DATA
-    _ZTISt19_Sp_counted_deleterIP10InvestmentPFvS1_ESaIvELN9__gnu_cxx12_Lock_policyE2EE @56 DATA
-    _ZTSFvP10InvestmentE @57 DATA
-    _ZTSPFvP10InvestmentE @58 DATA
-    _ZTSSt11_Mutex_baseILN9__gnu_cxx12_Lock_policyE2EE @59 DATA
-    _ZTSSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE @60 DATA
-    _ZTSSt19_Sp_counted_deleterIP10InvestmentPFvS1_ESaIvELN9__gnu_cxx12_Lock_policyE2EE @61 DATA
-    _ZTVSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE @62 DATA
-    _ZTVSt19_Sp_counted_deleterIP10InvestmentPFvS1_ESaIvELN9__gnu_cxx12_Lock_policyE2EE @63 DATA
-    _ZnwyPv @64
+    SampleFunction @2
+    _Z7DeleterP10Investment @3
+    _Z9DeleterIIP10Investment @4
+    _ZN10Investment11GetDaysHeldEv @5
+    _ZN10InvestmentC1ERKi @6
+    _ZN10InvestmentC2ERKi @7
+    _ZN10InvestmentD1Ev @8
+    _ZN10InvestmentD2Ev @9
+    _ZNK10Investment9IsTaxFreeEv @10
+    _ZNSt3tr110shared_ptrI10InvestmentEC1IS1_PFvPS1_EEEPT_T0_ @11
+    _ZNSt3tr110shared_ptrI10InvestmentED1Ev @12
+    _ZNSt3tr110shared_ptrI10InvestmentEaSEOS2_ @13
+    _ZNSt3tr112__shared_ptrI10InvestmentLN9__gnu_cxx12_Lock_policyE2EEC2IS1_PFvPS1_EEEPT_T0_ @14
+    _ZNSt3tr112__shared_ptrI10InvestmentLN9__gnu_cxx12_Lock_policyE2EED2Ev @15
+    _ZNSt3tr112__shared_ptrI10InvestmentLN9__gnu_cxx12_Lock_policyE2EEaSEOS4_ @16
+    _ZNSt3tr114__shared_countILN9__gnu_cxx12_Lock_policyE2EEC1IP10InvestmentPFvS6_EEET_T0_ @17
+    _ZNSt3tr114__shared_countILN9__gnu_cxx12_Lock_policyE2EED1Ev @18
+    _ZNSt3tr114__shared_countILN9__gnu_cxx12_Lock_policyE2EEaSERKS3_ @19
+    _ZNSt3tr116_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE10_M_destroyEv @20
+    _ZNSt3tr116_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE10_M_releaseEv @21
+    _ZNSt3tr116_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE15_M_add_ref_copyEv @22
+    _ZNSt3tr116_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EEC2Ev @23
+    _ZNSt3tr116_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EED2Ev @24
+    _ZNSt3tr121_Sp_counted_base_implIP10InvestmentPFvS2_ELN9__gnu_cxx12_Lock_policyE2EE10_M_disposeEv @25
+    _ZNSt3tr121_Sp_counted_base_implIP10InvestmentPFvS2_ELN9__gnu_cxx12_Lock_policyE2EE14_M_get_deleterERKSt9type_info @26
+    _ZNSt3tr121_Sp_counted_base_implIP10InvestmentPFvS2_ELN9__gnu_cxx12_Lock_policyE2EEC1ES2_S4_ @27
+    _ZNSt3tr121_Sp_counted_base_implIP10InvestmentPFvS2_ELN9__gnu_cxx12_Lock_policyE2EED0Ev @28
+    _ZNSt3tr121_Sp_counted_base_implIP10InvestmentPFvS2_ELN9__gnu_cxx12_Lock_policyE2EED1Ev @29
+    _ZNSt3tr132__enable_shared_from_this_helperILN9__gnu_cxx12_Lock_policyE2EEEvRKNS_14__shared_countIXT_EEEz @30
+    _ZTIFvP10InvestmentE @31 DATA
+    _ZTINSt3tr111_Mutex_baseILN9__gnu_cxx12_Lock_policyE2EEE @32 DATA
+    _ZTINSt3tr116_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EEE @33 DATA
+    _ZTINSt3tr121_Sp_counted_base_implIP10InvestmentPFvS2_ELN9__gnu_cxx12_Lock_policyE2EEE @34 DATA
+    _ZTIPFvP10InvestmentE @35 DATA
+    _ZTSFvP10InvestmentE @36 DATA
+    _ZTSNSt3tr111_Mutex_baseILN9__gnu_cxx12_Lock_policyE2EEE @37 DATA
+    _ZTSNSt3tr116_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EEE @38 DATA
+    _ZTSNSt3tr121_Sp_counted_base_implIP10InvestmentPFvS2_ELN9__gnu_cxx12_Lock_policyE2EEE @39 DATA
+    _ZTSPFvP10InvestmentE @40 DATA
+    _ZTVNSt3tr116_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EEE @41 DATA
+    _ZTVNSt3tr121_Sp_counted_base_implIP10InvestmentPFvS2_ELN9__gnu_cxx12_Lock_policyE2EEE @42 DATA
